@@ -1,4 +1,4 @@
-package com.poc.webflux;
+package com.pedrocomitto.parallel;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,7 +1,7 @@
-package com.poc.webflux.controller;
+package com.pedrocomitto.parallel.controller;
 
-import com.poc.webflux.domain.response.AggregateResponse;
-import com.poc.webflux.service.AsyncAggregateService;
+import com.pedrocomitto.parallel.domain.response.AggregateResponse;
+import com.pedrocomitto.parallel.service.AsyncAggregateService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,7 +1,7 @@
-package com.poc.webflux.http;
+package com.pedrocomitto.parallel.http;
 
-import com.poc.webflux.domain.response.PostResponse;
-import com.poc.webflux.domain.response.UserResponse;
+import com.pedrocomitto.parallel.domain.response.PostResponse;
+import com.pedrocomitto.parallel.domain.response.UserResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

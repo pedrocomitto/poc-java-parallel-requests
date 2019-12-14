@@ -1,4 +1,4 @@
-package com.poc.webflux.domain.response;
+package com.pedrocomitto.parallel.domain.response;
 
 import lombok.Data;
 

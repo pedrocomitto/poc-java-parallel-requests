@@ -1,9 +1,9 @@
-package com.poc.webflux.service;
+package com.pedrocomitto.parallel.service;
 
-import com.poc.webflux.domain.response.AggregateResponse;
-import com.poc.webflux.domain.response.PostResponse;
-import com.poc.webflux.domain.response.UserResponse;
-import com.poc.webflux.http.JsonPlaceholderClient;
+import com.pedrocomitto.parallel.domain.response.AggregateResponse;
+import com.pedrocomitto.parallel.domain.response.PostResponse;
+import com.pedrocomitto.parallel.domain.response.UserResponse;
+import com.pedrocomitto.parallel.http.JsonPlaceholderClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
