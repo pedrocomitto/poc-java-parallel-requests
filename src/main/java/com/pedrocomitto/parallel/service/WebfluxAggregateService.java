@@ -34,7 +34,7 @@ public class WebfluxAggregateService {
         return aggregatePostAndUser(postResponseMono, userResponseMono);
     }
 
-    private Mono<PostResponse> retrievePost(Integer id) throws InterruptedException {
+    private Mono<PostResponse> retrievePost(final Integer id) throws InterruptedException {
         log.info("M=retrievePost");
         return jsonPlaceholderClient.get()
                 .uri("/posts/" + id)
@@ -54,7 +54,7 @@ public class WebfluxAggregateService {
                 .doOnSuccess(i -> log.info("retrieveUser success callback"));
     }
 
-    private Mono<AggregateResponse> aggregatePostAndUser(Mono<PostResponse> postResponseMono, Mono<UserResponse> userResponseMono) {
+    private Mono<AggregateResponse> aggregatePostAndUser(final Mono<PostResponse> postResponseMono, final Mono<UserResponse> userResponseMono) {
         return Mono.zip(postResponseMono, userResponseMono).map(merge -> AggregateResponse.builder()
                 .body(merge.getT1().getBody())
                 .title(merge.getT1().getTitle())
