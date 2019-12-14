@@ -1,4 +1,4 @@
-package com.pedrocomitto.parallel;
+package com.pedrocomitto.poc.parallel;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

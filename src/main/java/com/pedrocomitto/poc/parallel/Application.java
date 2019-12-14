@@ -1,4 +1,4 @@
-package com.pedrocomitto.parallel;
+package com.pedrocomitto.poc.parallel;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

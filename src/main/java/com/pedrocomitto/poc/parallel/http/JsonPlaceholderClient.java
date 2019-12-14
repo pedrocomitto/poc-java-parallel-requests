@@ -1,7 +1,7 @@
-package com.pedrocomitto.parallel.http;
+package com.pedrocomitto.poc.parallel.http;
 
-import com.pedrocomitto.parallel.domain.response.PostResponse;
-import com.pedrocomitto.parallel.domain.response.UserResponse;
+import com.pedrocomitto.poc.parallel.domain.response.PostResponse;
+import com.pedrocomitto.poc.parallel.domain.response.UserResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

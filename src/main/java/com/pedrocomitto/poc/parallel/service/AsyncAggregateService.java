@@ -1,9 +1,9 @@
-package com.pedrocomitto.parallel.service;
+package com.pedrocomitto.poc.parallel.service;
 
-import com.pedrocomitto.parallel.domain.response.AggregateResponse;
-import com.pedrocomitto.parallel.domain.response.PostResponse;
-import com.pedrocomitto.parallel.domain.response.UserResponse;
-import com.pedrocomitto.parallel.http.JsonPlaceholderClient;
+import com.pedrocomitto.poc.parallel.domain.response.AggregateResponse;
+import com.pedrocomitto.poc.parallel.domain.response.PostResponse;
+import com.pedrocomitto.poc.parallel.domain.response.UserResponse;
+import com.pedrocomitto.poc.parallel.http.JsonPlaceholderClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

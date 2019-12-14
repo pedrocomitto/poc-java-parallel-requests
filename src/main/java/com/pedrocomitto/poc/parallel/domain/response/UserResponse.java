@@ -1,4 +1,4 @@
-package com.pedrocomitto.parallel.domain.response;
+package com.pedrocomitto.poc.parallel.domain.response;
 
 import lombok.Data;
 

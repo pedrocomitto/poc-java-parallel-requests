@@ -1,4 +1,4 @@
-package com.pedrocomitto.parallel;
+package com.pedrocomitto.poc.parallel;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
