@@ -37,7 +37,8 @@ public class WebfluxAggregateService {
     private Mono<PostResponse> retrievePost(final Integer id) throws InterruptedException {
         log.info("M=retrievePost");
         return jsonPlaceholderClient.get()
-                .uri("/posts/" + id)
+                .uri(uriBuilder -> uriBuilder.path("/posts/{id}").build(id))
+                .attribute("id", id)
                 .retrieve()
                 .bodyToMono(PostResponse.class)
                 .delayElement(Duration.of(10, ChronoUnit.SECONDS))
@@ -47,7 +48,7 @@ public class WebfluxAggregateService {
     private Mono<UserResponse> retrieveUser(final Integer id) {
         log.info("M=retrieveUser");
         return jsonPlaceholderClient.get()
-                .uri("/users/" + id)
+                .uri(uriBuilder -> uriBuilder.path("/users/{id}").build(id))
                 .retrieve()
                 .bodyToMono(UserResponse.class)
                 .delayElement(Duration.of(2, ChronoUnit.SECONDS))
