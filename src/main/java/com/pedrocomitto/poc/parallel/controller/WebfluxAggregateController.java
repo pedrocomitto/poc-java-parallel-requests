@@ -1,6 +1,7 @@
 package com.pedrocomitto.poc.parallel.controller;
 
 import com.pedrocomitto.poc.parallel.domain.response.AggregateResponse;
+import com.pedrocomitto.poc.parallel.domain.response.PostAndUserResponse;
 import com.pedrocomitto.poc.parallel.service.WebfluxAggregateService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,5 +26,10 @@ public class WebfluxAggregateController {
     @GetMapping("/dependent")
     public Mono<AggregateResponse> callDependentRequestsAndAggregateResponses() throws InterruptedException {
         return service.callDependentRequestsAndAggregateResponses();
+    }
+
+    @GetMapping("/dependent/functional")
+    public Mono<PostAndUserResponse> callDependentRequestsAndAggregateResponsesInAElegantFunctionalWay() throws InterruptedException {
+        return service.callDependentRequestsAndAggregateResponsesInAElegantFunctionalWay();
     }
 }

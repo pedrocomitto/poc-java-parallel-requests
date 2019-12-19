@@ -1,6 +1,7 @@
 package com.pedrocomitto.poc.parallel.service;
 
 import com.pedrocomitto.poc.parallel.domain.response.AggregateResponse;
+import com.pedrocomitto.poc.parallel.domain.response.PostAndUserResponse;
 import com.pedrocomitto.poc.parallel.domain.response.PostResponse;
 import com.pedrocomitto.poc.parallel.domain.response.UserResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -27,11 +28,17 @@ public class WebfluxAggregateService {
 
     public Mono<AggregateResponse> callDependentRequestsAndAggregateResponses() throws InterruptedException {
 
-        Mono<PostResponse> postResponseMono = retrievePost(1);
+        Mono<PostResponse> postResponseMono = retrievePost(1).cache();
 
-        Mono<UserResponse> userResponseMono = postResponseMono.map(PostResponse::getUserId).flatMap(this::retrieveUser);
+        Mono<UserResponse> userResponseMono = postResponseMono.map(PostResponse::getUserId).flatMap(this::retrieveUser).cache();
 
         return aggregatePostAndUser(postResponseMono, userResponseMono);
+    }
+
+    public Mono<PostAndUserResponse> callDependentRequestsAndAggregateResponsesInAElegantFunctionalWay() throws InterruptedException {
+        return retrievePost(1)
+                .flatMap(postResponse -> retrieveUser(postResponse.getId())
+                        .map(userResponse -> new PostAndUserResponse(postResponse, userResponse)));
     }
 
     private Mono<PostResponse> retrievePost(final Integer id) throws InterruptedException {
