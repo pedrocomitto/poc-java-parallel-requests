@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.concurrent.ExecutionException;
 
 @RestController
-@RequestMapping("/async/")
+@RequestMapping("/async")
 public class AsyncAggregateController {
 
     private final AsyncAggregateService service;
